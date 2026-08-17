@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function validar(val) {
+            var checkbox = document.querySelectorAll('input[type="checkbox"]:checked');
+            const botao = document.getElementById('0')
+            if (checkbox.length == 3) {
+                botao.disable = false
+            }
+        }
+
+
+        function alerta(){
+            alert('F')
+        }
+    </script>
+</head>
+<body>
+    <form action="">
+        <input onclick="validar(1)"type="checkbox"  id="1">
+        <input onclick="validar(1)" type="checkbox"  id="2">
+        <input  onclick="validar(1)" type="checkbox"  id="3">
+        <button disabled onclick="alerta()" id="0">botao</button>
+    </form>
+</body>
+</html>

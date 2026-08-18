@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex09</title>
+
+    <style>
+        div{
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <!-- Exiba uma imagem na tela. Crie 3 botões: “Reduzir”, “Aumentar” e “Trocar imagem”. Eles devem, respectivamente, alterar o width, o height e o src da imagem. -->
+
+    <div>
+        <img src="./extra/img1.jpg" alt="">
+        <input type="button" value="Reduzir" id="btnR" onclick="acao('reduzir')">
+        <input type="button" value="Aumentar" id="btnA" onclick="acao('aumentar')">
+        <input type="button" value="Trocar imagem" id="btnT" onclick="acao('troca')">
+    </div>
+
+    <script>
+        function acao(esc){
+            var img = document.querySelector('img')
+
+            if (esc === 'reduzir'){
+                img.style.width = '200px'
+            }else if (esc === 'aumentar'){
+                img.style.height = '350px'
+            }else if (esc === 'troca'){
+                img.src = './extra/img2.jpg' 
+            }
+        }
+    </script>
+
+
+
+</body>
+</html>

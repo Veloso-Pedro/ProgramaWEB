@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex08</title>
+</head>
+<body>
+    <!-- Crie um campo <textarea> que, a cada tecla pressionada, exiba a quantidade de caracteres digitados. Caso ultrapasse 140 caracteres, exiba em vermelho e bloqueie novas digitações. -->
+
+
+    <textarea name="texto" id="txt" placeholder="Digite Aqui!" oninput="pare()"></textarea>
+
+    <p><strong>Total de Caracteres: </strong></p>
+
+    <script>
+        function pare(){
+            var txt = document.getElementById('txt')
+            var qtd = txt.value.length
+
+            
+            document.querySelector('p').innerHTML = `<p><strong>Total de Caracteres: ${qtd} </strong></p>`
+
+            if (txt.value.length == 140){
+                txt.disabled = true
+
+                document.querySelector('p').style.color = 'red'
+            }
+            
+        }
+    </script>
+</body>
+</html>

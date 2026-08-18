@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex10</title>
+</head>
+<body>
+    <!-- Crie um formulário com campos Nome e Idade. Ao clicar em “Adicionar”, uma nova linha é criada em uma tabela exibida abaixo. Use document.createElement e appendChild -->
+
+    <form action="">
+        <p><Strong>Nome: <input type="text" name="nome" id="txtnome"> </Strong></p>
+
+        <p><strong>Idade: <input type="number" name="idade" id="idade"></strong></p>
+
+        <input type="button" value="Adicionar" id="btn" onclick="adicionar()">
+
+        <table>
+            <thead>
+                <tr>
+                    <th><strong>Nome</strong></th>
+                    <th><strong>Idade</strong></th>
+                </tr>
+            </thead>
+            <tbody id="corpo">
+                <tr id="linha">
+                    <th>Pedro</th>
+                    <td>22</td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+
+    <script>
+        function adicionar(){
+            var txtnome = document.getElementById('txtnome')
+            var idade = document.getElementById("idade")
+            var corpo = document.getElementById('corpo')
+            var linha = document.getElementById('linha')
+            var th = document.createElement('th')
+            var td = document.createElement('td')
+
+            th.textContent = txtnome.value
+            td.textContent = idade.value
+
+            var p1 = linha.appendChild(th)
+            var p2 = linha.appendChild(td)
+
+            corpo.appendChild(p1)
+            corpo.appendChild(p2)
+        }
+    </script>
+</body>
+</html>

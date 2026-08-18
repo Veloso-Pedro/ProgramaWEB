@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex04</title>
+</head>
+
+<body>
+    <!-- Crie um campo de texto com um botão "Adicionar". Sempre que o usuário digitar algo e clicar no botão, o item é adicionado a uma lista de tarefas abaixo. Adicione a opção de remover cada tarefa -->
+    <div>
+        <input type="text" name="Objeto" id="txt">
+        <input type="button" value="Adicionar" id="btnA" onclick="add()">
+        <input type="button" value="Remover" id="btnR" onclick="remove()">
+    </div>
+
+    <p></p>
+
+    <h1><strong>Lista</strong></h1>
+    <ul id="ul">
+       
+    </ul>
+
+    <script>
+        var ba = document.getElementById('btnA')
+        var br = document.getElementById('btnR')
+        var txt = document.getElementById('txt')
+        var ul = document.getElementById('ul')
+        
+        function add(){
+            var li = document.createElement('li')
+            var btn = document.createElement('button')
+
+            btn.textContent = 'X'
+
+            btn.onclick = function remove(){
+                ul.removeChild(li)
+            }
+            li.textContent = txt.value.trim()
+            li.appendChild(btn)
+
+            ul.appendChild(li)
+
+            txt.value = ''
+        }
+
+        function remove(){
+            ul.removeChild(li)
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex06 e ex07 e ex08</title>
+</head>
+<body>
+    <!-- 6 – Crie um parágrafo com um texto como conteúdo. Crie 4 botões. Dois para trocar a cor da fonte, de branco para preto e vice-versa e outros dois para fazer o mesmo com o fundo do parágrafo. Use divs se julgar necessário.
+    7 – Crie um botão + (mais) e outro – (menos) na mesma página do exercício anterior. Esses botões aumentam e diminuem o tamanho da fonte, respectivamente 
+    8 – Ainda continuando no exercício 6, faça um botão que transforme todo o texto do parágrafo em maiúscula, e outro em minúscula
+    -->
+
+
+    <div>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis natus minus itaque numquam magnam maxime corporis sit omnis, mollitia, iure nemo, modi a doloribus nobis culpa iusto error odit. Suscipit.</p>
+    </div>
+    
+
+    <button onclick="fazaParada('fb')">Fonte Branca</button>
+    <button onclick="fazaParada('fp')">Fonte Preta</button>
+    <button onclick="fazaParada('Fb')">Fundo Branco</button>
+    <button onclick="fazaParada('Fp')">Fundo Preto</button>
+    <button onclick="fazaParada('mais')">+</button>
+    <button onclick="fazaParada('menos')">-</button>
+    <button onclick="fazaParada('maiúscula')">Maiúscula</button>
+    <button onclick="fazaParada('minúscula')">Minúscula</button>
+
+    <script>
+        function fazaParada(tipo){
+            var btn = document.querySelectorAll('button')
+            var p = document.querySelector('p')
+            var div = document.querySelector('div')
+            var origem = 16
+
+            if (tipo === 'fb'){
+                p.style.color = 'white'
+            }else if (tipo === 'fp'){
+                p.style.color = 'black'
+            }else if (tipo === 'Fb'){
+                div.style.backgroundColor = 'white'
+            }else if (tipo === 'Fp'){
+                div.style.backgroundColor = 'black'
+            }else if (tipo === 'mais'){
+                origem += 10
+                p.style.fontSize = origem + 'px'
+            }else if (tipo === 'menos'){
+                origem -= 5
+                p.style.fontSize = origem + 'px'
+            }else if (tipo === 'maiúscula'){
+                p.style.textTransform = 'uppercase'
+            }else if (tipo === 'minúscula'){
+                p.style.textTransform = 'lowercase'
+            }
+        }
+    </script>
+</body>
+</html>

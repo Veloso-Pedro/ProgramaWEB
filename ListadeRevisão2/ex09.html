@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex09</title>
+
+    <style>
+        body {
+            background-color: rgb(54, 118, 202);
+            font: normal;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+
+        }
+
+        h1 {
+            color: rgba(255, 255, 255, 0.884);
+            font-family: Arial;
+            text-align: center;
+        }
+
+        div {
+            border-radius: 25px;
+            background-color: rgb(245, 240, 233);
+            width: 250px;
+            text-align: center;
+            padding: 20px;
+            margin: auto;
+        }
+
+        label, input {
+            display: block;
+            margin: 5px auto 15px auto;
+            width: 90%;
+        }
+
+        input[type="button"] {
+            width: auto;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 9 - Crie um formulário com os campos para cadastrar o usuário de um sistema (login, senha e confirmar senha). Permita que a página seja submetida apenas se todos os campos estiverem preenchidos, se os campos senha e confirma senha forem iguais e a senha possuir entre 6 e 10 caracteres -->
+
+    <h1>Criação de Usuário</h1>
+
+    <div>
+        <form>
+            <label> Nome: <input type="text" name="Login" id="txtl" placeholder="Digite seu nome para Login"></label>
+            <label> Senha: <input type="text" name="senha" id="txts" placeholder="Crie sua senha"></label>
+            <label> Confirmar Senha: <input type="text" name="csenha" id="txtcs" placeholder="Confirme sua senha"></label>
+            <input type="button" value="Confirmar" id="btn" onclick="verificar()">
+
+        </form>
+    </div>
+
+    <script>
+        function verificar() {
+            var nome = document.getElementById('txtl').value
+            var senha = document.getElementById('txts').value
+            var csenha = document.getElementById('txtcs').value
+
+            if (nome != '' &&(senha.length <= 10 && senha.length >= 6) && senha === csenha ) {
+                alert('Formulario Enviado')
+            }else{
+                if (nome === ''){
+                    alert('Nome não pode ser Vazio')
+                }else if (!(senha.length >= 6 && senha.length <= 10)){
+                    alert('A Senha precisa ter entre 6 e 10 caracteres ')
+                }else if (senha !== csenha){
+                    alert('as Senhas precisam ser iguais')
+                }
+            }
+
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex03</title>
+</head>
+
+<body>
+    <!-- 3 - Crie uma página com uma lista (select - RadioButton) com 4 opções de cores. Ao selecionar uma opção de cor, altere o plano de fundo da página para a cor específica -->
+    <form>
+        <label>
+            <input type="radio" name="cor" id="" onclick="mudarCor('red')"> <strong>Vermelho</strong>
+        </label>
+        <br>
+        <label>
+            <input type="radio" name="cor" id="" onclick="mudarCor('blue')"> <strong>Azul</strong>
+        </label>
+        <br>
+        <label>
+            <input type="radio" name="cor" id="" onclick="mudarCor('green')"> <strong>Verde</strong>
+        </label>
+        <br>
+        <label>
+            <input type="radio" name="cor" id="" onclick="mudarCor('yellow')"> <strong>Amarelo</strong>
+        </label>
+        <br>
+        <label>
+            <input type="radio" name="cor" id="" onclick="mudarCor('white')"> <strong>Branca</strong>
+        </label>
+    </form>
+
+    <script>
+        function mudarCor(cor){
+            var r = document.querySelector('input[type = "radio"]')
+            var pag = document.querySelector('body')
+
+            if (cor === 'red'){
+                if(pag.style.backgroundColor === 'red'){
+                    alert('A pagina já está Vermelha!')
+                    pag.style.backgroundColor = 'white'
+                    r.checked = false
+                }else{
+                    pag.style.backgroundColor = 'red'
+                }
+            }else if(cor === 'blue'){
+                if(pag.style.backgroundColor === 'blue'){
+                    alert('A pagina já está Azul!')
+                    pag.style.backgroundColor = 'white'
+                    r.checked = false
+                }else{
+                    pag.style.backgroundColor = 'blue'
+                }
+            }else if(cor === 'green'){
+                if(pag.style.backgroundColor === 'green'){
+                    alert('A pagina já está Verde!')
+                    pag.style.backgroundColor = 'white'
+                    r.checked = false
+                }else{
+                    pag.style.backgroundColor = 'green'
+                }
+            }else if(cor === 'yellow'){
+                if(pag.style.backgroundColor === 'yellow'){
+                    alert('A pagina já está Amarela!')
+                    pag.style.backgroundColor = 'white'
+                    r.checked = false
+                }else{
+                    pag.style.backgroundColor = 'yellow'
+                }
+            }else if (cor === 'white'){
+                if(pag.style.backgroundColor === 'white'){
+                    alert('A pagina já está Branca!')
+                    pag.style.backgroundColor = 'white'
+                    r.checked = false
+                }else{
+                    pag.style.backgroundColor = 'white'
+                }
+            }
+            
+
+        }
+    </script>
+
+
+</body>
+
+</html>

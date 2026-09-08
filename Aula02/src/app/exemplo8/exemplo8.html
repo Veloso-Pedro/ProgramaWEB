@@ -1,0 +1,4 @@
+<p [class]="{'ativo': ativo, 'inativo': !ativo}">
+    Estado: {{ativo ? 'Ativo' : 'Inativo'}}
+</p>
+<button (click)="ativo = !ativo">Trocar</button>

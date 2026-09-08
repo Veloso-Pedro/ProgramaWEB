@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex02</title>
+</head>
+
+<body>
+    <!-- Crie um botão que, ao ser clicado, mostre a data e hora atual formatada (ex: 11/04/2025 14:36) em um parágrafo na página.-->
+
+    <input type="button" value="Horas?" onclick="horas()">
+    <p>Data</p>
+
+    <script>
+        var b = document.querySelector('button')
+        var p = document.querySelector('p')
+
+        function horas(){
+            var data = new Date()
+            var dataFormatada = data.toLocaleDateString('pt-BR')
+            var hora = data.getHours()
+            var minutos = data.getMinutes()
+
+            p.innerText = dataFormatada +' '+ hora + ':' + minutos
+        }
+    </script>
+</body>
+
+</html>

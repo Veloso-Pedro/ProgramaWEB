@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex05</title>
+
+    <script>
+        function validar(val) {
+            var checkbox = document.querySelectorAll('input[type="checkbox"]:checked');
+            var btn = document.getElementById('0')
+
+            if (checkbox.length >= 2){
+                btn.disabled = false
+            }else{
+                btn.disabled = true
+            }
+            
+        }
+    </script>
+</head>
+<body>
+    <!-- 5 – Crie um formulário de seleção de itens com checkbox. O formulário deve possuir um botão desabilitado. O botão só se torna clicável quando tiver pelo menos 2 checkboxs marcado. -->
+    <form>
+        <input onclick="validar()"type="checkbox"  id="1">
+        <input onclick="validar()" type="checkbox"  id="2">
+        <input  onclick="validar()" type="checkbox"  id="3">
+        <button disabled onclick="validar()" id="0">botao</button>
+    </form>
+</body>
+</html>

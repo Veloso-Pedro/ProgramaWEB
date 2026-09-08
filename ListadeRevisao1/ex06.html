@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex06</title>
+</head>
+<body>
+    <!-- Crie um campo de senha e um botão com o texto “Mostrar senha”. Ao clicar, o botão deve alternar o tipo do campo entre "password" e "text -->
+
+    <input type="password" name="senha" id="senha">
+    <input type="button" value="Mostrar Senha" id="btn" onclick="revelar()">
+
+    <script>
+        function revelar(){
+            var input = document.getElementById('senha')
+
+            if (input.type == 'password'){
+                input.setAttribute('type', 'Text')
+            }else {
+                input.setAttribute('type', 'password')
+            }
+        }
+
+            
+    </script>
+</body>
+</html>

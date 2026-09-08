@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex05</title>
+</head>
+
+<body>
+    <!-- Crie um formulário com dois campos numéricos e quatro botões: Somar, Subtrair, Multiplicar, Dividir. O resultado deve ser exibido em um parágrafo abaixo -->
+
+    <form action="">
+        <input type="number" name="n1" id="n1" placeholder="Número 1">
+        <input type="number" name="n2" id="n2" placeholder="Número 2">
+        <div>
+            <input type="button" value="Somar" id="somar" onclick= 'Adicao()'>
+            <input type="button" value="Subtrair" id="sub" onclick="subtracao()">
+            <input type="button" value="Multiplicar" id="multi" onclick= 'multiplicacao()'>
+            <input type="button" value="Dividir" id="divi" onclick= 'divisao()'>
+        </div>
+    </form>
+
+    <p><strong>Resultado: </strong></p>
+
+    <script>
+        var somar = document.getElementById('somar')
+        var sub = document.getElementById('sub')
+        var multi = document.getElementById('multi')
+        var divi = document.getElementById('divi')
+        var p = document.querySelector('p')
+
+        function Adicao(){
+            var n1 = Number(document.getElementById('n1').value) 
+            var n2 = Number(document.getElementById('n2').value) 
+            var conta = n1 + n2
+            
+
+            p.innerHTML = `<p><strong>Resultado: ${conta} </strong></p>`
+        }
+
+        function subtracao(){
+            var n1 = Number(document.getElementById('n1').value) 
+            var n2 = Number(document.getElementById('n2').value) 
+            var conta = n1 - n2
+            
+
+            p.innerHTML = `<p><strong>Resultado: ${conta} </strong></p>`
+        }
+
+        function multiplicacao(){
+            var n1 = Number(document.getElementById('n1').value) 
+            var n2 = Number(document.getElementById('n2').value) 
+            var conta = n1 * n2
+            
+
+            p.innerHTML = `<p><strong>Resultado: ${conta} </strong></p>`
+        }
+
+        function divisao(){
+            var n1 = Number(document.getElementById('n1').value) 
+            var n2 = Number(document.getElementById('n2').value) 
+            var conta = n1 / n2
+            
+
+            p.innerHTML = `<p><strong>Resultado: ${conta} </strong></p>`
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex02</title>
+
+    <style>
+        a:link {
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 2 - Crie uma página com 4 links (tag <a>), cada um representando o nome de uma cor, que, utilizando o evento onmouseover altere a cor do plano de fundo para cor corresponde -->
+    <a href="Vermelho" onmouseover="mudarCor('red')">Vermelho</a>
+    <br>
+    <a href="Azul" onmouseover="mudarCor('blue')">Azul</a>
+    <br>
+    <a href="Verde" onmouseover="mudarCor('green')">Verde</a>
+    <br>
+    <a href="Amarelo" onmouseover="mudarCor('yellow')">Amarelo</a>
+
+    <script>
+        function mudarCor(cor) {
+            var a = document.querySelectorAll('a')
+            var b = document.querySelector('body')
+
+            if (cor === 'red') {
+                b.style.backgroundColor = cor
+            } else if (cor === 'blue') {
+                b.style.backgroundColor = cor
+            } else if (cor === 'green') {
+                b.style.backgroundColor = cor
+            } else if (cor === 'yellow') {
+                b.style.backgroundColor = cor
+            }
+        }
+    </script>
+</body>
+
+</html>

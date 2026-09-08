@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex01</title>
+</head>
+<body>
+<!-- Crie uma página com um botão "Clique aqui". A cada clique, exiba quantas vezes o botão foi clicado. Quando
+atingir 10 cliques, exiba a mensagem “Chega, né? -->
+
+<input type="button" value="Clique aqui!" id="btn" onclick="contar()">
+<input type="button" value="Resetar" id="btnR" disabled onclick="resetar()">
+
+<p>Quantidade: </p>
+
+<script>  
+    var b = document.getElementById('btn')
+    var br = document.getElementById('btnR')
+    var p = document.querySelector('p')
+    var qtd = 0
+    function contar(){
+        qtd ++
+        p.innerHTML = qtd
+
+        if (qtd == 10){
+            p.innerText = 'Chega, né!'
+            b.disabled = true 
+            br.disabled = false
+        }
+    }
+
+    function resetar(){
+        location.reload()
+    }
+</script>
+
+</body>
+</html>

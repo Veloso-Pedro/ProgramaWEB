@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex11</title>
+</head>
+<body>
+    <!-- Crie 5 checkboxes com nomes de frutas. Mostre abaixo quantas estão selecionadas em tempo real conforme o usuário marca ou desmarca as opções. -->
+
+
+    <label> <input type="checkbox" name="Maça" id="1" onclick="marca()"> Maçã</label>
+    <label> <input type="checkbox" name="Perá" id="2" onclick="marca()"> Perá</label>
+    <label> <input type="checkbox" name="Abacaxi" id="3" onclick="marca()"> Abacaxi</label>
+    <label> <input type="checkbox" name="Banana" id="4" onclick="marca()"> Banana</label>
+    <label> <input type="checkbox" name="Manga" id="5" onclick="marca()"> Manga</label>
+
+    <p><strong>QTD: </strong></p>
+
+
+    <script>
+       function marca(){
+            var box = document.querySelectorAll('input[type=checkbox]:checked')
+            //var box = document.getElementsByTagName('checkbox')
+            var qtd = box.length
+
+    
+            document.querySelector('p').innerHTML = `<p><strong>QTD: ${qtd} </strong></p>`
+             
+        }
+    </script>
+    
+</body>
+</html>

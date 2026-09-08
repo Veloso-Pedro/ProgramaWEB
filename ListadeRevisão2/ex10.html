@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex10</title>
+
+    <style>
+        body {
+            background-color: rgb(54, 118, 202);
+            font: normal;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        h1 {
+            color: rgba(255, 255, 255, 0.884);
+            font-family: Arial;
+            text-align: center;
+        }
+
+        div {
+            border-radius: 25px;
+            background-color: rgb(245, 240, 233);
+            width: 250px;
+            text-align: center;
+            padding: 20px;
+            margin: auto;
+        }
+
+        label,
+        input {
+            display: block;
+            margin: 5px auto 15px auto;
+            width: 90%;
+        }
+
+        input[type="button"] {
+            width: auto;
+            cursor: pointer;
+        }
+
+        .grupo-radio {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .titulo-radio {
+            font-weight: bold;
+        }
+
+        .radio-label,
+        .radio-label input[type="radio"] {
+            display: inline-block;
+            width: auto;
+            margin: 0;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <!--10 - Crie um formulário de cadastro de cliente. O formulário deve conter os campos Nome (text), Pessoa (Física/Jurídica–radio),CPF (text), CNPJ (text), data de nascimento, endereço (text), cep (text), telefone (text), email. O formulário deve ativar o campo CPF apenas se o RadioButton de pessoa física estiver ativo e o campo de CNPJ no caso de pessoa jurídica. O campo data de nascimento também só deve estar ativo no caso de pessoa física ser selecionado e deve aceitar que somente números sejam digitados. O campo CEP também só deve aceitar número-->
+
+    <h1>Criação de Cliente</h1>
+
+    <div>
+        <form>
+            <label> Nome: <input type="text" name="Login" id="txtl" placeholder="Digite seu nome"></label>
+            <div class="grupo-radio">
+                <span class="titulo-radio">Pessoa:</span>
+                <label class="radio-label">
+                    <input type="radio" name="tipo_pessoa" value="fisica" id="f" onchange="verificar()"> Física
+                </label>
+
+                <label class="radio-label">
+                    <input type="radio" name="tipo_pessoa" value="juridica" id="j" onchange="verificar()"> Jurídica
+                </label>
+            </div>
+            <label style="display: none;" id="labelcpf">
+                CPF: <input type="text" name="cpf" id="cpf">
+            </label>
+            <label style="display: none;" id="labelcnpj">
+                CNPJ: <input type="text" name="cnpj" id="cnpj">
+            </label>
+            <label style="display: none;" id="labeldt">
+                Data de Nascimento: <input type="text" name="dt" id="data"
+                    oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+            </label>
+            <label>
+                Endereço: <input type="text" name="endereço" id="e">
+            </label>
+            <label>
+                CEP: <input type="text" name="cep" id="cep" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+            </label>
+            <label>
+                Telefone: <input type="text" name="tel" id="tel">
+            </label>
+            <label>
+                Email: <input type="email" name="email" id="email">
+            </label>
+            <input type="button" value="Confirmar" id="btn" onclick="verificar()">
+        </form>
+    </div>
+
+    <script>
+        function verificar() {
+            var nome = document.getElementById('txtl').value;
+            var f = document.getElementById('f');
+            var j = document.getElementById('j');
+            var dt = document.getElementById('data').value;
+            var cep = document.getElementById('cep').value;
+            var e = document.getElementById('e').value;
+            var tel = document.getElementById('tel').value;
+            var mail = document.getElementById('email').value;
+
+            if (f.checked === true) {
+                document.getElementById("labelcpf").style.display = 'block';
+                document.getElementById("labeldt").style.display = 'block';
+                document.getElementById("labelcnpj").style.display = 'none';
+            } else if (j.checked === true) {
+                document.getElementById("labelcnpj").style.display = 'block';
+                document.getElementById("labelcpf").style.display = 'none';
+                document.getElementById("labeldt").style.display = 'none';
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex07</title>
+
+    <style>
+        body {
+            background: rgba(233, 178, 115, 0.589);
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        .box {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #555;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Crie três botões: Vermelho, Amarelo e Verde. Cada um deve acender uma luz correspondente em um semáforo desenhado com <div>s. Apenas uma luz deve ficar "acesa" por vez. -->
+
+    <div class="container">
+        <div class="box" id="1">
+        </div>
+        <div class="box" id="2">
+        </div>
+        <div class="box" id="3">
+        </div>
+    </div>
+
+    <input type="button" value="Vermelho" id="red" onclick="sinal('vermelho')">
+    <input type="button" value="Amarelo" id="yellow" onclick="sinal('amarelo')">
+    <input type="button" value="Verde" id="green" onclick="sinal('verde')">
+
+    <script>
+        function sinal(cor) {
+            var led1 = document.getElementById('1')
+            var led2 = document.getElementById('2')
+            var led3 = document.getElementById('3')
+
+            led1.style.backgroundColor = '#555'
+            led2.style.backgroundColor = '#555'
+            led3.style.backgroundColor = '#555'
+
+            if (cor === 'vermelho'){
+                led1.style.backgroundColor = 'red'
+            }else if (cor === 'amarelo'){
+                led2.style.backgroundColor = 'yellow'
+            }else if (cor === 'verde') {
+                led3.style.backgroundColor = 'green'
+            }
+
+        }
+    </script>
+
+</body>
+
+</html>

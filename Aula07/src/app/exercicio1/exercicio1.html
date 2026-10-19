@@ -1,0 +1,18 @@
+<h1>Produtos</h1>
+
+<div>
+    <label>
+        <input type="number" [(ngModel)]="codigo" placeholder="Digite o código do produto">
+        <input type="text" [(ngModel)]="nome" placeholder="Digite o Nome do produto">
+        <button (click)="addProduto()">Adicionar</button>
+    </label>
+</div>
+
+<div>
+    <h3>produtos Adicionados</h3>
+    @for(p of produtos; track $index){
+        <div>
+            <p> Código do produto: {{p.id}} / Nome do produto: {{p.nome}}</p>
+        </div>
+    }
+</div>

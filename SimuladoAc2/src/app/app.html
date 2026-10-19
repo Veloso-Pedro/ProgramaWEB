@@ -1,0 +1,15 @@
+
+@for (p of listaTarefas; track p.id){
+  <div>
+    <h3>----------------------------------</h3>
+    <h4> {{p.titulo}}</h4>
+    <p>
+      {{p.descricao}}
+    </p>
+    <p>{{p.data}}</p>
+  </div>
+} @empty {
+    <p>nenhuma tarefa adicionanda</p>
+}
+
+<router-outlet/>

@@ -1,0 +1,36 @@
+<div>
+  <h4>{{ post.titulo }}</h4>
+  <small>
+    por {{ post.autor}} em {{ post.data }}
+  </small>
+  <p>{{ post.conteudo }}</p>
+</div>
+
+<div>
+  @for(post of posts; track $index){
+  <div>
+    <h4>{{ post.titulo }}</h4>
+    <small>
+      por {{ post.autor}} em {{ post.data }}
+    </small>
+    <p>{{ post.conteudo }}</p>
+  </div>
+  } @empty {
+    <p>Nenhum post encontrado.</p>
+  }
+</div>
+
+<h2>Exemplos feitos em type</h2>
+
+<div>
+  <p>
+    nome: {{user.nome}}
+    level: {{user.nivel}}
+    email: {{user.email}}
+  </p>
+</div>
+
+<a href="./exercicio1/">exercicio1</a>
+
+
+<router-outlet />

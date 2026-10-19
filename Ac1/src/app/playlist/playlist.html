@@ -1,0 +1,34 @@
+<body [class]="{'Reproduzir': status, 'Pausar': !status}">
+    <div>
+        <div id="top">
+            <h2>Playlist</h2>
+        </div>
+
+        <div id="selecionada">
+            @if (selecionada){
+            <p>Curtil? <button (click)="incrementar()">Curtir!</button> Curtidas: {{curtidas}} </p>
+            <p>Música Selecionada: {{selecionada}}</p>
+            <button (click)="status = !status">{{status ?
+                'Reproduzir' :
+                'Pausar'}}</button>
+            }@else{
+            <p>Nenhuma Múscia selecionada!</p>
+            }
+        </div>
+
+
+        <div id="adicionar">
+            <input [(ngModel)]="adicionar" type="text" placeholder="Adicionar Música a sua playlist">
+            <button (click)="adicionarMusica(adicionar)">Adicionar</button>
+        </div>
+        <div id="lista">
+            <p>Lista de Músicas</p>
+            <ul>
+                @for(music of musicas; track $index ){
+                <li (click)="selecionada = music">{{music}}</li>
+                }
+            </ul>
+        </div>
+
+    </div>
+</body>

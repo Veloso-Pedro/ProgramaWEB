@@ -1,0 +1,11 @@
+body {
+    background-color: rgb(68, 68, 168);
+    color: white;
+    border-radius: 30px;
+    padding: auto;
+    text-align: center;
+}
+
+.Reproduzir {
+    background-color: antiquewhite;
+}

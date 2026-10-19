@@ -10,6 +10,7 @@ import { Exemplo8 } from './exemplo8/exemplo8';
 import { Exemplo9 } from './exemplo9/exemplo9';
 import { Exemplo10 } from './exemplo10/exemplo10';
 import { Exemplo11 } from './exemplo11/exemplo11';
+import { Ex1 } from './ex1/ex1';    
 import { Componente1 } from './componente1/componente1';
 export const routes: Routes = [
     {path: 'componente1', component: Componente1},
@@ -23,5 +24,6 @@ export const routes: Routes = [
     {path: 'exemplo8', component: Exemplo8},
     {path: 'exemplo9', component: Exemplo9},
     {path: 'exemplo10', component: Exemplo10},
-    {path: 'exemplo11', component: Exemplo11}
+    {path: 'exemplo11', component: Exemplo11},
+    {path: 'ex1', component: Ex1}
 ];

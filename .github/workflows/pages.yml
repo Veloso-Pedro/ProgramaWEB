@@ -27,7 +27,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20' # Versão recomendada para Angular recente
+          node-version: '22' # Versão recomendada para Angular recente
           
       - name: Install Dependencies
         # Entra na pasta do projeto para instalar os pacotes

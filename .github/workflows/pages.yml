@@ -1,0 +1,55 @@
+name: Deploy Angular to GitHub Pages
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20' # Versão recomendada para Angular recente
+          
+      - name: Install Dependencies
+        # Entra na pasta do projeto para instalar os pacotes
+        working-directory: ./SimuladoAc2
+        run: npm ci
+        
+      - name: Build Angular Project
+        working-directory: ./SimuladoAc2
+        # Faz o build definindo a rota base como o nome do seu repositório
+        run: npx ng build --base-href /ProgramaWEB/
+        
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+        
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # IMPORTANTE: Este caminho muda dependendo da versão do Angular.
+          # Verifique a propriedade "outputPath" no seu angular.json.
+          # Geralmente é './SimuladoAc2/dist/simulado-ac2/browser' ou './SimuladoAc2/dist/simulado-ac2'
+          path: './SimuladoAc2/dist/simulado-ac2/browser'
+          
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

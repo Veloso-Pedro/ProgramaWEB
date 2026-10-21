@@ -1,0 +1,21 @@
+<h2>Carrinho de Compra</h2>
+
+<h3>Adicionar Produto ao Carrinho:</h3>
+<input [(ngModel)]="nomeProduto" type="text" placeholder="Digite o NOME do produto">
+<input [(ngModel)]="valorProduto" type="text" placeholder="Digite o VALOR do produto">
+<button (click)="adicionar()">Adicionar!</button>
+
+<div>
+    <ul>
+        @for(p of carrinho; track $index){
+            <li>Nome do Produto: {{p.nome}}
+                Valor do Produto: {{p.valor}}
+            </li>
+        }@empty{
+            <p>CARRINHO VAZIO!</p>
+        }
+    </ul>
+    
+    
+</div>
+

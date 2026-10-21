@@ -1,1 +1,11 @@
-<p>cadastrar-tarefa works!</p>
+<h3>Cadastrar tarefas</h3>
+
+<div>
+    <label>
+        <input #inputNome type="text" placeholder="Digite o nome da tarefa:">
+        <input #inputPrazo type="text" placeholder="Digite o prazo para a conclusão:">
+    </label>
+    <button type="button" (click)="adicionar(inputNome.value, inputPrazo.value )">Cadastrar</button>
+</div>
+
+<a routerLink="/listar-tarefa">Ir para Lista de Tarefas</a>

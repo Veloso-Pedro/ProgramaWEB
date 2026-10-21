@@ -1,27 +1,17 @@
 import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { TarefaService } from './Service/tarefa-service';
-
-interface Tarefas {
-  id: number;
-  titulo: String;
-  descricao: String;
-  data: Date;
-  concluido: boolean;
-}
+import { RouterLink, RouterOutlet } from '@angular/router';
+import { TarefaService, Tarefa } from './Service/tarefa-service';
 
 @Component({
+  imports: [RouterOutlet, RouterLink],
   selector: 'app-root',
-  imports: [RouterOutlet],
+  styleUrl: './app.css',
   templateUrl: './app.html',
-  styleUrl: './app.css'
 })
 export class App {
   protected readonly title = signal('SimuladoAc2');
 
-  listaTarefas : Tarefas[] = [];
+  constructor(public lt : TarefaService){}
 
-  constructor ( ts : TarefaService){
-    this.listaTarefas = ts.listar();
-  }
+  
 }

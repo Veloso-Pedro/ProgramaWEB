@@ -1,52 +1,60 @@
 import { Injectable } from '@angular/core';
 
-
-interface Tarefas {
-  id: number;
-  titulo: String;
-  descricao: String;
-  data: Date;
-  concluido: boolean;
+export interface Tarefa{
+    nome: string;
+    prazo: number;
+    status: boolean;
 }
 
 @Injectable({
-  providedIn: 'root',
+    providedIn: 'root'
 })
-export class TarefaService {
+export class TarefaService { 
 
-  // Array 
-  listaTarefas : Tarefas[] = []
+    Listatarefas: Tarefa[] = []
 
-  //Variaveis
-
-  id: number = 1;
-  titulo: String = "Teste";
-  descricao: String = "Isso é um teste";
-  data = new Date
-  concluido: boolean = false;
-
-  listar() {
-    return this.listaTarefas;
-  }
-
-  adicionar() {
-    const obj : Tarefas = {
-      id : this.id,
-      titulo : this.titulo,
-      descricao : this.descricao, 
-      data : this.data, 
-      concluido : this.concluido
+    listar(){
+       return this.Listatarefas
     }
-    this.listaTarefas.push(obj)
-  }
 
-  remover() {
-    this.listaTarefas.splice(this.id, 1)
-  }
+    adicionar(nomeTarefa:string, qtdPrazo:number){
+        const add: Tarefa = {
+            nome: nomeTarefa,
+            prazo: qtdPrazo,
+            status: false
+        }
 
-  prazo() {
+        this.Listatarefas.push(add)
+    }
 
-  }
+    remover(index: number){
 
-  
+        this.Listatarefas.splice(index, 1)
+    }
+
+    prazoConclusao(){}
+
+    marcarConcluida(index: number){
+        this.Listatarefas[index].status = true
+    }
+
+    contadorTarefas(){
+        var concluidos = 0;
+        var pendentes = 0;
+        var total = 0;
+
+        for(var i = 0 ; i < this.Listatarefas.length; i++){
+            if(this.Listatarefas[i].status == true){
+                concluidos += 1
+            }else{
+                pendentes += 1
+            }
+        };
+
+        total = concluidos + pendentes;
+
+        return {total, concluidos, pendentes}
+    }
+
+
 }

@@ -1,15 +1,20 @@
+<body>
+    <h1>Tarefas</h1>
 
-@for (p of listaTarefas; track p.id){
-  <div>
-    <h3>----------------------------------</h3>
-    <h4> {{p.titulo}}</h4>
-    <p>
-      {{p.descricao}}
-    </p>
-    <p>{{p.data}}</p>
-  </div>
-} @empty {
-    <p>nenhuma tarefa adicionanda</p>
-}
+    <a routerLink="/listar-tarefa">Ir para Lista de Tarefas </a>
+    <br>
+    <a routerLink="/cadastrar-tarefa"> Cadastrar tarefas</a>
 
-<router-outlet/>
+    <div>
+        <p>
+            <strong>Total:</strong> {{lt.contadorTarefas().total}}
+            <strong>Concluídas:</strong> {{lt.contadorTarefas().concluidos}}
+            <strong>Pendentes:</strong> {{lt.contadorTarefas().pendentes}}
+        </p>
+    </div>
+    <router-outlet />
+</body>
+
+
+
+

@@ -1,0 +1,29 @@
+<body>
+    <h2>Lista de tarefas</h2>
+
+    <a routerLink="/cadastrar-tarefa">Voltar ao Cadastro</a>
+
+    <div>
+        <ul>
+            @for(t of lt; track $index){
+            <li>
+                <span [class.concluida]="t.status">
+                    <p>-----------------------------</p>
+                    Nome: {{t.nome}}
+                    <p>------------------</p>
+                    Prazo: {{t.prazo}} Dias
+                    <p>------------------</p>
+                    Status: {{t.status}}
+                    <p>------------------</p>
+                </span>
+
+                <button type="button" (click)="remover($index)">Remover</button>
+                <button type="button" (click)="concluir($index)">Concluir</button>
+                <p>-----------------------------</p>
+            </li>
+            }@empty{
+            <p>Nenhuma tarefa cadastrada</p>
+            }
+        </ul>
+    </div>
+</body>

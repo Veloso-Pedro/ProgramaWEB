@@ -1,0 +1,28 @@
+<h2>Lista de Frutas</h2>
+
+<input  #inputNome [(ngModel)]="nomeFruta" type="text" placeholder="Nome da Fruta">
+<br>
+<input  #inputTipo [(ngModel)]="tipoFruta" type="text" placeholder="Tipo de Fruta">
+<br>
+<button (click)="adicionar(inputNome.value, inputTipo.value)">Adicionar Fruta</button>
+
+<div>
+    <p>---------------------------------------------------------</p>
+    <ul>
+        @for(f of listaFrutas; track $index){
+            <p>==================================</p>
+            <li>
+                Nome da fruta:  {{f.nome}}
+                <br>
+                Tipo de fruta: {{f.tipo}}
+                <br>
+                <button (click)="alterar($index)">Alterar</button>
+                <button (click)="remover($index)">Remover</button>
+            </li>
+            <p>==================================</p>
+        }@empty{
+            <p>Lista Vazia!</p>
+        }
+    </ul>
+    <p>---------------------------------------------------------</p>
+</div>
